@@ -46,7 +46,7 @@ mako_reactor() {
 
 
 build_skiboot() {
-  git clone --depth=1 -b ${branch:=master} --single-branch "${url}" skiboot
+  [[ ! -d skiboot ]] && git clone --depth=1 -b ${branch:=master} --single-branch "${url}" skiboot
   cd skiboot
 
   git show -s | cat
